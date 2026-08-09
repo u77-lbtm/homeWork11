@@ -17,46 +17,64 @@ public class Main {
         }
         double average = sum / inputArray1.length;
         double outputArray1[] = {sum, max, min, average};
+        System.out.println(Arrays.toString(inputArray1));
         System.out.println(Arrays.toString(outputArray1));
         //TASK 2
         System.out.println("");
-        int inputArray2[] = {255, 200, 300, 400};
-        int nalog = 13;
-        int[] outputArray2 = new int[inputArray2.length];
-        for (int index = 0; index < inputArray2.length; index++) {
-            outputArray2[index] = (int) Math.round(inputArray2[index] * nalog / 100);
+                int[] inputArray2 = {255, 200, 300, 400, 500};
+                int nalog = 13;
+                double[] outputArray2 = new double[inputArray2.length];
+
+                int index = 0; // Переменная для отслеживания индекса
+                for (int value : inputArray2) {
+                    outputArray2[index] = (int) Math.round(value * nalog / 100.0);
+                    index++; // Увеличиваем индекс на каждой итерации
+                }
+
+                System.out.println(Arrays.toString(inputArray2));
+                System.out.println(Arrays.toString(outputArray2));
+        // TASK 3
+        System.out.println("");
+        int[] inputArray3 = {2550, 2000, 3000, 4000, 4400};
+        int b = 5000;
+        boolean[] outputArray3 = new boolean[inputArray3.length];
+        for (int value2:inputArray3) {
+            outputArray3[index] = inputArray3[index] > b;
         }
-            // TASK 3
-            System.out.println("");
-            int[] inputArray3 = {2550, 2000, 3000, 4000};
-            int b = 5000;
-            boolean[] outputArray3 = new boolean[inputArray3.length];
-            for (int i = 0; i < inputArray3.length; i++) {
-                outputArray3[i] = inputArray3[i] > b;
-            }
+        System.out.println(Arrays.toString(inputArray3));
+        System.out.println(Arrays.toString(outputArray3));
+
+
             //TASK 4
             System.out.println("");
-            int[] inputArray4 = {1500, -200, 3000, -50, 4500};
-                 boolean[] outputArray4 = new boolean[inputArray4.length];
+        int[] inputArray4 = {1500, -200, 3000, -50, 4500};
+        boolean allPositive = true;
 
-                    for (int i = 0; i < inputArray4.length; i++) {
-                        outputArray4[i] = inputArray4[i] >= 0;
-                    }
-                    System.out.println("inputArray4:  " + Arrays.toString(inputArray4));
-                    System.out.println("outputArray4: " + Arrays.toString(outputArray4));
+        for (int val : inputArray4) {
+            if (val < 0) {
+                allPositive = false;
+                break; //
+            }
+        }
+
+        System.out.println("inputArray4: " + Arrays.toString(inputArray4));
+        System.out.println("Результат (Все >= 0): " + allPositive);
+
         //TASK 5
         System.out.println("");
         int[] inputArray5 = {1500, -200, 111, 45, -511};
 
-        boolean[] outputArray5 = new boolean[5];
+        int count=0;
 
 
-        for (int i = 0; i < inputArray5.length; i++) {
-            outputArray5[i] = inputArray5[i] > 0;
+        for (int value5:inputArray5) {
+            if (value5>0){
+                count++;
+            }
         }
-
+        int [] result={count};
         System.out.println("inputArray5: " + Arrays.toString(inputArray5));
-        System.out.println("outputArray5: " + Arrays.toString(outputArray5));
+        System.out.println("result: " + Arrays.toString(result));
     }
 
 
